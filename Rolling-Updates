@@ -1,0 +1,5 @@
+Keeping your application up and running requires proper configuration. This can be achieved by using kubectl to perform rolling updates.
+Essentially your pods are doing a form auto-scaling by utilizing CI/CD to promote an app from one environment to another or doing a rollback to a previous 
+version and/or using container image updates to create new instances of your pods.
+
+Find more info in the Kubernetes documentation here https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/
