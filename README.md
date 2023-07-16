@@ -7,7 +7,7 @@ Apps/tools used in this tutorial are in no specific order and are found below.
 
 - Docker
   
-- Kubernetes (K8)
+- Kubernetes (K8s)
 
 - Minikube
 
