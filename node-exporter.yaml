@@ -1,3 +1,6 @@
+#node exporter uses prometheus to pull metric data. Run it using docker.
+#use grafana node exporter full dashboard to visualize the metric data.
+
 apiVersion: apps/v1
 kind: DeamonSet
 metadata:
