@@ -1,0 +1,4 @@
+Kubernetes Authorization / RBAC Authorization
+
+Find verbs K8s docs here https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb
+How to use and configure RBAC authorization https://kubernetes.io/docs/reference/access-authn-authz/rbac/
