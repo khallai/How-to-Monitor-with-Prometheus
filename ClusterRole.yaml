@@ -1,0 +1,28 @@
+#using RBAC to determine what access should be given.
+#Set policies and authorization for API groups.
+#ClusterRole is the K8 object that allows for permissions to be set.
+#verbs determine the request for a resource API endpoint 
+#(ex. - get - request for individual resources; 
+#list - request - for collections, including full object content;
+#watch -  watching an individual resource or collection of resources).
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: prometheus
+rules:
+  - apiGroups: [""]
+    resources:
+      - nodes
+      - nodes/proxy
+      - services
+      - endpoints
+      - pods
+    verbs: ["get", "list", "watch"]
+  - apiGroups: 
+      - extensions
+    resources:
+      - ingresses
+    verbs: ["get", "list", "watch"]
+  - nonResourceURLs: ["/metrics"]
+    verbs: ["get"]

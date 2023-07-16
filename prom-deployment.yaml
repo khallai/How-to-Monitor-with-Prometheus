@@ -1,0 +1,71 @@
+#using RBAC to determine what access should be given.
+#Set policies and authorization for API groups.
+#ClusterRole is the K8 object that allows for permissions to be set.
+#verbs determine the request for a resource API endpoint 
+#(ex. - get - request for individual resources; 
+#list - request - for collections, including full object content;
+#watch -  watching an individual resource or collection of resources).
+
+apiVersion: rbac.authorization.k8s.io/v1
+    kind: Deployment
+    metadata:
+      labels:
+        name: prometheus
+      name: prometheus
+      namespace: monitoring
+      spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          name: prometheus
+      strategy:
+        rollingUpdate:
+          maxSurge: 1
+          maxUnavailable: 1
+        type: RollingUpdate
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            name: prometheus
+            image: <Image>
+          annotations:
+            prometheus.io/scrape: "true"
+            prometheus.io/port: "9090"
+        spec:
+          containers:
+          - args:
+            - --config.file=/etc/prometheus/prometheus.yml
+            - --storage.tsdb.path=/etc/prometheus
+            - --storage.tsdb.retention=24h
+            command:
+            - /bin/prometheus
+            image: quay.io/prometheus/prometheus:v2.45.0
+            imagePullPolicy: IfNotPresent
+            name: prometheus
+            ports:
+            - containerPort: 9090
+              protocol: TCP
+            resources:
+              limits:
+                cpu: 500m
+                memory: 2500Mi
+              requests:
+                cpu: 100m
+                memory: 100Mi
+            volumeMounts:
+            - mountPath: /prometheus
+              name: data
+            - mountPath: /etc/prometheus
+              name: config-volume
+          restartPolicy: Always
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - emptyDir: {}
+            name: data
+          - configMap:
+              name: prometheus-config
+            name: config-volume
+
+
