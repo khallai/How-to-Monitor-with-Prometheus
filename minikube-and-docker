@@ -1,0 +1,4 @@
+In order to set up your Kubernetes environment locally (on your own device) you need some sort of virtual machine to handle the load. 
+We are using minikube for this tutorial. If you haven't worked with minikube go to the official docs and install it
+on your device. Here are the K8s docs https://minikube.sigs.k8s.io/docs/start/
+
