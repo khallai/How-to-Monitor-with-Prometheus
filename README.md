@@ -19,7 +19,7 @@ Apps/tools used in this tutorial are in no specific order and are found below.
 
 - YAML 
 
-- Go 
+- Python
 
 
 ____________________________
@@ -34,4 +34,4 @@ ____________________________
 
 - - YAML (file format)
 
-- Go (language used)
+- Python (language used)
