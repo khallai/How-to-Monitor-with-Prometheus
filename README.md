@@ -1,5 +1,5 @@
 # How-to-Monitor-with-Prometheus
-Getting started with Observability using Cloud Native apps in 2023.
+Getting started with Observability using Cloud Native apps in 2023. This tutorial is designed for those new to Prometheus, Kubernetes, Docker, minikube and kubectl.
 
 Apps/tools used in this tutorial are in no specific order and are found below.  
 
