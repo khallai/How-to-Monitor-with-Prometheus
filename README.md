@@ -20,6 +20,8 @@ Apps/tools used in this tutorial are in no specific order and are found below.
 - YAML 
 
 - Python
+  
+- MySQL 
 
 
 ____________________________
@@ -35,3 +37,5 @@ ____________________________
 - - YAML (file format)
 
 - Python (language used)
+
+- Database MySQL
