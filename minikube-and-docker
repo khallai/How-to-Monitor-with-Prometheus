@@ -1,15 +1,24 @@
 In order to set up your Kubernetes environment locally (on your own device) you need some sort of virtual machine (VM) to handle the load. 
 We are using minikube for this tutorial. If you haven't worked with minikube go to the official docs and install it
-on your device. Here are the K8s docs https://minikube.sigs.k8s.io/docs/start/  Minikube creates a VM on your local machine so that you can start working with Kubernetes. It's a great way to learn, mess up, do it right, break it and then fix it! 
+on your device. Here are the K8s docs https://minikube.sigs.k8s.io/docs/start/  Minikube creates a VM on your local machine so that you can start working with Kubernetes. 
+It's a great way to learn, mess up, do it right, break it, and then fix it! 
 
-After downloading minikube go to ther terminal and type in the command
+After downloading minikube go to the terminal and type in the command
 
 minikube start
 
-This will initiate the provisioning of kubernetes and create the Docker container. 
+This will initiate the provisioning of Kubernetes and create the Docker container. 
 
-Make sure you have created a Docker account, downloaded the desktop version and have it open on your device . Here is the Docker link https://www.docker.com/
+Make sure you have created a Docker account, downloaded the desktop version, and have it open on your device. Here is the Docker link https://www.docker.com/
 
-Once everything is all good to go you should see that the minikube container is now up and running in Docker. Just look at your docker dashboard to see minikube with the status running.  
+Once everything is all good to go you should see that the minikube container is now up and running in Docker. Just look at your docker dashboard to see minikube with 
+the status running.  
 
-Note: you should have the latest version of homebrew running to use CLI commands in the terminal. If you don't know what homebrew is look it up on github or google it and get it installed! 
+Next, we need to get Kubectl working. To do so go to the Kubernetes docs here https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/
+Follow the installation process for your device. Verify that kubectl is running and the kubectl configuration.
+
+kubectl cluster-info
+
+The output should let you know the ip address that the control plane is running on and the CoreDNS URL.
+
+Note: you should have the latest version of Homebrew running to use commands in the terminal. If you don't know what homebrew is look it up on github or google it and get it installed! 
