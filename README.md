@@ -13,7 +13,7 @@ Apps/tools used in this tutorial are in no specific order and are found below.
 
 - Kubectl
 
-- Prometheus
+- PromQL
 
 - Grafana 
 
